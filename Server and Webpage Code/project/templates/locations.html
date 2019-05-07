@@ -1,0 +1,9 @@
+{% extends 'layout.html' %}
+{% block content %}
+  {% if current_user.is_authenticated %}
+    <h3>Commute Settings</h3>
+    Start Location: {{ start_location }} <a href="select_start_location">Change</a>
+    <br/>
+    End Location: {{ end_location }} <a href="select_end_location">Change</a>
+  {% endif %}
+{% endblock %}

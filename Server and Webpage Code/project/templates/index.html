@@ -1,0 +1,16 @@
+{% extends 'layout.html' %}
+{% block content %}
+	<h1 class='welcomeText'>Welcome</h1>
+  {% if current_user.is_authenticated %}
+    {% if proximity_flag %}
+      <div class='centerText'>Proximity Sensor is currently {{ proximity_flag }}</div>
+      <br/>
+      <button class='centerButton' onclick="window.location.href = '/proximity_on';"> ON <a/>
+      <br/>
+      <button class='centerButton' onclick="window.location.href = '/proximity_off';"> OFF <a/>
+    {% endif %}
+  {% else %}
+    <div class='center'><button class='center'onclick="window.location.href = '/authorize';">Login</=button></div>
+  {% endif %}
+
+{% endblock %}

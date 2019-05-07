@@ -1,0 +1,9 @@
+<ul>
+  <li><a href="/">Home</a></li>
+  {% if current_user.is_authenticated %}
+    <li><a href="/select_locations">Set Locations</a></li>
+    <div class="loggedInIndicator">Logged in as: {{ current_user.email }}</div>
+  {% else %}
+    <li class="navBarLoginButton"><a href='/authorize'>Login</a></li>
+  {% endif %}
+</ul>
